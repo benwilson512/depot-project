@@ -2,7 +2,7 @@
 
 one:
   title: MyString
-  desctiption: MyText
+  description: MyText
   image_url: MyString
   price: 9.99
 
