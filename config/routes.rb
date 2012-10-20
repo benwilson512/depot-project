@@ -1,4 +1,8 @@
 Depot::Application.routes.draw do
+  resources :meals
+
+  resources :cafeteria
+
   resources :products
 
   root :to => 'products#index'

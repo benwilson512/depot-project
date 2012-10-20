@@ -1,36 +1,14 @@
-Product.delete_all
-Product.create(title: 'CoffeeScript',
-  description: 
-    %{<p>
-        CoffeeScript is JavaScript done right. It provides all of JavaScript's
-  functionality wrapped in a cleaner, more succinct syntax. In the first
-  book on this exciting new language, CoffeeScript guru Trevor Burnham
-  shows you how to hold onto all the power and flexibility of JavaScript
-  while writing clearer, cleaner, and safer code.
-      </p>},
-  image_url:   'cs.jpg',    
-  price: 36.00)
-# . . .
-Product.create(title: 'Programming Ruby 1.9',
-  description:
-    %{<p>
-        Ruby is the fastest growing and most exciting dynamic language
-        out there. If you need to get working programs delivered fast,
-        you should add Ruby to your toolbox.
-      </p>},
-  image_url: 'ruby.jpg',
-  price: 49.95)
-# . . .
+cafe1 = Cafeterium.create! name: "MAP", location: "Mary Anderson Pew Hall", open_time: "7:15am", close_time: "7:00pm"
+cafe2 = Cafeterium.create! name: "Hicks", location: "Hicks Residence Hall", open_time: "10:50am", close_time: "7:00pm"
 
-Product.create(title: 'Rails Test Prescriptions',
-  description: 
-    %{<p>
-        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
-        Rails applications, covering Test-Driven Development from both a
-        theoretical perspective (why to test) and from a practical perspective
-        (how to test effectively). It covers the core Rails testing tools and
-        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
-        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
-      </p>},
-  image_url: 'rtp.jpg',
-  price: 34.95)
+foods = %Q[ Chicken Parmesan Sandwich or Philly Steak Sub
+7" Personal Pan Pizza or Garlic Bread Sticks w/ Marinara
+Steak Burritos/ Black Beans/ White Rice
+Grilled Chicken Salad or Grilled Veggie Salad 
+Popcorn/ Chips/ Side Salad/ Hand Fruit
+16oz Pepsi Fountain Drink or 8oz Milk or Fresca Water
+]
+
+foods.split("\n").each do |food|
+  Meal.create! name: food, cafeterium: cafe1
+end
